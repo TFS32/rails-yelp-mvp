@@ -1,7 +1,17 @@
+<%# <div class='container'>
+  <%= form_for [@restaurant, @review] do |f| %>
+    <%# <%= f.input :content %>
+    <%# <%= f.input :rating, as: :integer %>
+    <%# <%= f.submit 'Submit', class: 'btn btn-primary btn-block' %>
+  <%# <% end %>
+<%# </div> %>
+
 <div class='container'>
-  <%= simple_form_for[@restaurant, @review] do |f| %>
-    <%= f.input :content %>
-    <%= f.input :rating %>
-    <%= f.submit 'Submit', class: 'btn btn-primary btn-block' %>
+ <%= form_for [@restaurant, @review] do |f| %>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+    <%= f.label :rating %>
+    <%= f.number_field :rating %>
+    <%= f.submit %>
   <% end %>
 </div>

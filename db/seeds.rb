@@ -22,6 +22,14 @@ puts 'Creating restaurants...'
     category: ['chinese', 'italian', 'french', 'japanese', 'belgian'].sample
   )
   puts "restaurant #{restaurant.id} was created."
+
+  10.times do
+    Review.create!(
+      content: Faker::Restaurant.review,
+      rating: rand(0..5),
+      restaurant_id: restaurant.id
+    )
+  end
 end
 
 puts 'all done'
